@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	print("There is a new user created. Process it");
+	print($_POST['username']);
+	print($_POST['fullname']);
+	print($_POST['password']);
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -79,7 +87,7 @@
 
     <div class="form-container">
         <h2>User Information</h2>
-        <form action="#" method="POST">
+        <form action="process.php" method="POST">
             
             <div class="form-group">
                 <label for="username">Username</label>
@@ -95,7 +103,7 @@
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" maxlength="10" required placeholder="Enter password">
+                <input type="text" id="password" name="password" maxlength="10" required placeholder="Enter password">
                 <span class="hint">Max 10 characters</span>
             </div>
 
